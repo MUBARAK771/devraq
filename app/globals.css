@@ -35,4 +35,8 @@
 body {
   background: var(--color-bg);
   color: var(--color-ink);
+  font-family: var(--font-poppins), Arial, sans-serif;
+}
+*{
+ scroll-behavior: smooth;
 }

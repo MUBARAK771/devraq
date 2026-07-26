@@ -1,16 +1,11 @@
-import { Geist, Geist_Mono } from "next/font/google"
-
 import "./globals.css"
+import { Poppins } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const fontSans = Geist({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
 })
 
 export default function RootLayout({
@@ -22,8 +17,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
+      className={`${poppins.variable} font-sans antialiased`}
     >
+      <title>Mubarak | Frontend Developer</title>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

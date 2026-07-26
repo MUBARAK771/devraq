@@ -4,48 +4,77 @@ import Header from "@/components/Header"
 import { User } from "lucide-react"
 import Link from "next/link"
 
-
 export default function Home() {
   const stats = [
-    { value: "2+", label: "Years experience" },
-    { value: "30+", label: "Projects done" },
-    { value: "5+", label: "Happy clients" },
+    { value: "2+", label: "Years Experience" },
+    { value: "30+", label: "Projects Completed" },
+    { value: "10+", label: "Technologies Used" },
   ]
 
   const projects = [
-    { tag: "Fintech", title: "Budgetflex", desc: "Redesigned the onboarding flow for 30M+ users, reducing drop-off rate by 22%." },
-    { tag: "Dashboard", title: "Pay Control Admin", desc: "A data-rich dashboard that surfaces key insights without overwhelming the user." },
-    { tag: "E commerce", title: "MarketPro", desc: "An e-commerce platform designed to provide a seamless shopping experience for users." },
+    {
+      tag: "Posting App",
+      title: "Vibe App",
+      image: "/Vue_project.png",
+      desc: "A social media app for sharing posts and interacting with other users designed with HTML, Vue.js.",
+      link: "https://vibe-app-beryl-psi.vercel.app",
+    },
+    {
+      tag: "Fintech",
+      title: "BudgetFlex",
+      image: "/budgetflex.png",
+      desc: "Designed and developed an analytics dashboard with interactive charts and real-time insights, Designed with Next.js and API integration.",
+      link: "https://lenders-frontend.vercel.app/",
+    },
+    {
+      tag: "Online Arabic School",
+      title: "Al-hirz",
+      image: "/Al-hirz.png",
+      desc: "A comprehensive online platform for Arabic language education with structured courses, Designed with HTML, CSS, JavaScript. ",
+      link: "https://al-hirz.onrender.com/",
+    },
   ]
-
   const skills = [
-    { title: "UX Research", desc: "User interviews, usability testing, competitive analysis, and translating data into actionable design decisions." },
-    { title: "UI Design", desc: "Crafting high-fidelity interfaces with pixel-perfect attention to typography, spacing, and visual hierarchy." },
-    { title: "Mobile Design", desc: "Native iOS and Android design patterns, gesture-first interactions, and thumb-zone optimisation." },
-    { title: "Prototyping", desc: "Interactive Figma prototypes, micro-interaction design, and developer-ready design systems." },
+    {
+      title: "Frontend Development",
+      desc: "Building modern and responsive web applications using HTML, CSS, JavaScript React.js, Git, Next.js, TypeScript, and Tailwind CSS.",
+    },
+    {
+      title: "UI Implementation",
+      desc: "Transforming Figma designs into pixel-perfect interfaces with clean and maintainable code.",
+    },
+    {
+      title: "Performance Optimization",
+      desc: "Improving website speed, SEO, and accessibility to deliver a better user experience.",
+    },
+    {
+      title: "API Integration",
+      desc: "Connecting applications to REST APIs and third-party services to create dynamic experiences.",
+    },
   ]
 
   return (
     <div className="overflow-x-hidden">
       {/* ---------------- Header ---------------- */}
-      <Header/>
+      <Header />
 
       {/* ---------------- Hero ---------------- */}
-      <div className="px-4 sm:px-10 lg:px-40 mt-36 sm:mt-50">
-        <p className="text-xs tracking-widest text-muted uppercase mb-5">
+      <div className="mt-36 px-4 sm:mt-50 sm:px-10 lg:px-40">
+        <p className="mb-5 text-xs tracking-widest text-muted uppercase">
           Mubarak Abdulsalam &bull; Based in Nigeria
         </p>
 
-        <div className="flex flex-col sm:flex-row items-start justify-between gap-8">
-          <h1 className="text-3xl sm:text-3xl lg:text-5xl leading-tight max-w-2xl">
-            I&apos;m a Frontend Developer focused on mobile and web apps, previously {" "}
+        <div className="flex flex-col items-start justify-between gap-8 sm:flex-row">
+          <h1 className="max-w-2xl text-3xl leading-tight sm:text-3xl lg:text-5xl">
+            I&apos;m a Frontend Developer focused on mobile and web apps designs,
+            {" "}
             <span className="text-accent">
-             at Gigs tech solution and consult.
+            previously  at Gigs tech solution and consult.
             </span>
           </h1>
 
           <div
-            className="text-sm font-medium flex items-center gap-2 shrink-0"
+            className="flex shrink-0 items-center gap-2 text-sm font-medium"
             style={{
               border: "1px solid var(--color-border)",
               borderRadius: "999px",
@@ -60,82 +89,95 @@ export default function Home() {
       </div>
 
       {/* ---------------- About ---------------- */}
-      <div className="px-4 sm:px-10 lg:px-40 mt-16 sm:mt-50 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="mt-16 flex flex-col items-center justify-between gap-12 px-4 sm:mt-50 sm:px-10 md:flex-row lg:px-40">
         <div>
-          <p className="text-xs  tracking-widest text-muted uppercase mb-5">About</p>
+          <p className="mb-5 text-xs tracking-widest text-muted uppercase">
+            About
+          </p>
           <div className="mt-4 flex w-full flex-col items-start space-y-4 md:mt-0 md:w-[82%]">
             <h4 className="text-start text-xl md:text-2xl">
-              I am a pioneering software development firm that
-              specializes in frontend development to create
-              state-of-the-art tools and solutions.
+              I am a frontend developer focused on crafting engaging,
+              accessible, and high-performance web experiences.
             </h4>
+
             <h4 className="text-start text-xl md:text-2xl">
-              With a commitment to innovation and quality, I excel in
-              developing custom chatbots, AI-driven analytics platforms, and
-              specialized software solutions.
+              I specialize in building responsive interfaces with modern
+              technologies like React, Next.js, TypeScript, and Tailwind CSS.
             </h4>
+
             <h4 className="text-start text-xl md:text-2xl">
-              Our offerings are meticulously designed to cater to the unique
-              requirements of diverse sectors such as healthcare, law, banking,
-              and real estate.
+              My goal is to transform ideas and designs into fast, scalable, and
+              intuitive applications that users enjoy.
             </h4>
           </div>
 
-          <div className="flex gap-8 sm:gap-12 mt-10 flex-wrap">
+          <div className="mt-10 flex flex-wrap gap-8 sm:gap-12">
             {stats.map((s) => (
               <div key={s.label}>
                 <p className="text-3xl font-bold text-accent">{s.value}</p>
-                <p className="text-xs font-medium text-muted uppercase mt-1">{s.label}</p>
+                <p className="mt-1 text-xs font-medium text-muted uppercase">
+                  {s.label}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
         <div
-          className="flex items-center justify-center shrink-0 w-full max-w-xs md:max-w-none md:w-80 aspect-square"
+          className="flex aspect-square w-full max-w-xs shrink-0 items-center justify-center md:w-80 md:max-w-none"
           style={{
             borderRadius: "24px",
             border: "1px solid var(--color-border)",
-            background: "linear-gradient(135deg, var(--color-surface), var(--color-bg))",
+            background:
+              "linear-gradient(135deg, var(--color-surface), var(--color-bg))",
           }}
         >
-          <User className="h-24 w-24 rounded-full bg-accent/20 text-accent/50 p-5" />
+          <User className="h-24 w-24 rounded-full bg-accent/20 p-5 text-accent/50" />
         </div>
       </div>
 
       {/* ---------------- Work ---------------- */}
-      <div className="px-4 mt-20  sm:px-10 lg:px-40 mt-16 sm:mt-50">
-        <p className="text-xs  tracking-widest text-muted uppercase mb-4">Selected work</p>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10">
+      <div className="mt-20 px-4 sm:mt-50 sm:px-10 lg:px-40" id="work">
+        <p className="mb-4 text-xs tracking-widest text-muted uppercase">
+          Selected work
+        </p>
+
+        <h2 className="mb-10 text-3xl font-bold sm:text-4xl">
           Projects that <span className="text-accent">matter.</span>
         </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <div
               key={p.title}
-              style={{
-                border: "1px solid var(--color-border)",
-                borderRadius: "16px",
-                overflow: "hidden",
-                background: "var(--color-surface)",
-              }}
+              className="group overflow-hidden rounded-3xl border border-border bg-surface shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
-              <div
-                className="h-40"
-                style={{ background: "url(/budgetflex.png)",backgroundPosition:"center",backgroundSize:"cover" }}
-              />
-              <div className="p-6">
-                <span
-                  className="text-[11px] font-bold uppercase text-accent"
-                  style={{ background: "var(--color-accent-soft)", borderRadius: "999px", padding: "4px 10px" }}
-                >
+              <div className="relative h-56 overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+                <span className="absolute top-4 left-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-black uppercase">
                   {p.tag}
                 </span>
-                <h3 className="text-lg font-bold mt-4">{p.title}</h3>
-                <p className="text-sm text-muted mt-2 leading-relaxed">{p.desc}</p>
-                <Link href="" className="inline-block text-sm font-bold text-accent mt-5">
-                  View Case Study →
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold">{p.title}</h3>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {p.desc}
+                </p>
+
+                <Link
+                  href={p.link}
+                  className="mt-6 inline-flex items-center gap-2 font-semibold text-accent transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  View Project
+                  <span>→</span>
                 </Link>
               </div>
             </div>
@@ -144,13 +186,15 @@ export default function Home() {
       </div>
 
       {/* ---------------- Skills ---------------- */}
-      <div className="px-4 sm:px-10 lg:px-40 mt-16 sm:mt-20">
-        <p className="text-xs font-bold tracking-widest text-muted uppercase mb-4">Expertise</p>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10">
+      <div className="mt-16 px-4 sm:mt-20 sm:px-10 lg:px-40" id="skills">
+        <p className="mb-4 text-xs font-bold tracking-widest text-muted uppercase">
+          Expertise
+        </p>
+        <h2 className="mb-10 text-3xl font-bold sm:text-4xl">
           What I <span className="text-accent">bring.</span>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           {skills.map((s) => (
             <div
               key={s.title}
@@ -162,16 +206,18 @@ export default function Home() {
               }}
             >
               <h3 className="text-lg font-bold">{s.title}</h3>
-              <p className="text-sm text-muted mt-2 leading-relaxed max-w-md">{s.desc}</p>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">
+                {s.desc}
+              </p>
             </div>
           ))}
         </div>
       </div>
 
       {/* ---------------- Contact ---------------- */}
-      <div className="px-4 sm:px-10 lg:px-40 mt-16 sm:mt-20">
+      <div className="mt-16 px-4 sm:mt-20 sm:px-10 lg:px-40">
         <div
-          className="text-center px-6 sm:px-10"
+          className="px-6 text-center sm:px-10"
           style={{
             border: "1px solid var(--color-border)",
             borderRadius: "32px",
@@ -179,32 +225,46 @@ export default function Home() {
             padding: "60px 20px",
           }}
         >
-          <p className="text-xs font-bold tracking-widest text-muted uppercase mb-4">Get in touch</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Let&apos;s build something <span className="text-accent">great.</span>
+          <p className="mb-4 text-xs font-bold tracking-widest text-muted uppercase">
+            Get in touch
+          </p>
+          <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+            Let&apos;s build something{" "}
+            <span className="text-accent">great.</span>
           </h2>
-          <p className="text-muted max-w-md mx-auto mt-5">
-            Have a project in mind or just want to say hi? My inbox is always open.
+          <p className="mx-auto mt-5 max-w-md text-muted">
+            Have a project in mind or just want to say hi? My inbox is always
+            open.
           </p>
 
           <Link
             href=""
-            className="inline-block text-white font-bold mt-8"
-            style={{ background: "var(--color-accent)", borderRadius: "999px", padding: "14px 28px" }}
+            className="mt-8 inline-block font-bold text-white"
+            style={{
+              background: "var(--color-accent)",
+              borderRadius: "999px",
+              padding: "14px 28px",
+            }}
           >
             Send me a message →
           </Link>
 
-          <div className="flex gap-4 justify-center mt-9">
-            <a href="" className="text-ink/80 hover:text-accent">LinkedIn</a>
-            <a href="" className="text-ink/80 hover:text-accent">X</a>
-            <a href="" className="text-ink/80 hover:text-accent">Dribbble</a>
+          <div className="mt-9 flex justify-center gap-4">
+            <a href="" className="text-ink/80 hover:text-accent">
+              Facebook
+            </a>
+            <a href="" className="text-ink/80 hover:text-accent">
+              LinkedIn
+            </a>
+            <a href="" className="text-ink/80 hover:text-accent">
+              GitHub
+            </a>
+            
           </div>
         </div>
       </div>
-
       {/* ---------------- Footer ---------------- */}
-      <p className="text-center text-xs text-muted py-10">
+      <p className="py-10 text-center text-xs text-muted">
         &copy; {new Date().getFullYear()} Devraq. Designed with intention.
       </p>
     </div>
