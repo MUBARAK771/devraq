@@ -3,6 +3,7 @@
 import Header from "@/components/Header"
 import { User } from "lucide-react"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 export default function Home() {
   const stats = [
@@ -24,7 +25,7 @@ export default function Home() {
       title: "BudgetFlex",
       image: "/budgetflex.png",
       desc: "Designed and developed an analytics dashboard with interactive charts and real-time insights, Designed with Next.js and API integration.",
-      link: "https://lenders-frontend.vercel.app/",
+      link: "https://www.budgetflexinc.com/",
     },
     {
       tag: "Online Arabic School",
@@ -32,6 +33,27 @@ export default function Home() {
       image: "/Al-hirz.png",
       desc: "A comprehensive online platform for Arabic language education with structured courses, Designed with HTML, CSS, JavaScript. ",
       link: "https://al-hirz.onrender.com/",
+    },
+    {
+      tag: "School Management System",
+      title: "Eduflex",
+      image: "/eduflex.png",
+      desc: "A platform for managing and organizing school sports activities, Designed with Next.js and API integration.",
+      link: "https://lenders-frontend.vercel.app/",
+    },
+    {
+      tag: "Ecommerce",
+      title: "MarketPro",
+      image: "/marketpro.png",
+      desc: "A social media app for sharing posts and interacting with other users designed with HTML, Vue.js.",
+      link: "https://market-pro-y317.vercel.app/",
+    },
+    {
+      tag: "Golf App",
+      title: "golfngv",
+      image: "/golf.png",
+      desc: "A modern golf application with course navigation, tee time booking, and social features, Designed with HTML, CSS, JavaScript. ",
+      link: "https://golfngv.vercel.app/",
     },
   ]
   const skills = [
@@ -53,6 +75,26 @@ export default function Home() {
     },
   ]
 
+  const VISIBLE_COUNT = 3
+  const ROTATE_INTERVAL_MS = 2 * 60 * 1000 // 5 minutes
+  const [startIndex, setStartIndex] = useState(0)
+
+  useEffect(() => {
+    if (projects.length <= VISIBLE_COUNT) return // nothing to rotate
+
+    const id = setInterval(() => {
+      setStartIndex((prev) => (prev + VISIBLE_COUNT) % projects.length)
+    }, ROTATE_INTERVAL_MS)
+
+    return () => clearInterval(id)
+  }, [])
+
+  // wraps around the array so it always returns VISIBLE_COUNT items, even near the end
+  const visibleProjects = Array.from(
+    { length: Math.min(VISIBLE_COUNT, projects.length) },
+    (_, i) => projects[(startIndex + i) % projects.length]
+  )
+
   return (
     <div className="overflow-x-hidden">
       {/* ---------------- Header ---------------- */}
@@ -66,10 +108,10 @@ export default function Home() {
 
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row">
           <h1 className="max-w-2xl text-3xl leading-tight sm:text-3xl lg:text-5xl">
-            I&apos;m a Frontend Developer focused on mobile and web apps designs,
-            {" "}
+            I&apos;m a Frontend Developer focused on mobile and web apps
+            designs,{" "}
             <span className="text-accent">
-            previously  at Gigs tech solution and consult.
+              previously at Gigs tech solution and consult.
             </span>
           </h1>
 
@@ -146,10 +188,10 @@ export default function Home() {
           Projects that <span className="text-accent">matter.</span>
         </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
+          {visibleProjects.map((p) => (
             <div
               key={p.title}
-              className="group overflow-hidden rounded-3xl border border-border bg-surface shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              className="group animate-fadeIn overflow-hidden rounded-3xl border border-border bg-surface shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="relative h-56 overflow-hidden">
                 <img
@@ -250,16 +292,15 @@ export default function Home() {
           </Link>
 
           <div className="mt-9 flex justify-center gap-4">
-            <a href="" className="text-ink/80 hover:text-accent">
+            <a href="https://facebook.com/in/Mubarak Abdulsalam" className="text-ink/80 hover:text-accent">
               Facebook
             </a>
-            <a href="" className="text-ink/80 hover:text-accent">
+            <a href="https://linkedin.com/in/mubarak-abdulsalam-4943a0344" className="text-ink/80 hover:text-accent">
               LinkedIn
             </a>
-            <a href="" className="text-ink/80 hover:text-accent">
+            <a href="https://github.com/Mubarak771" className="text-ink/80 hover:text-accent">
               GitHub
             </a>
-            
           </div>
         </div>
       </div>
