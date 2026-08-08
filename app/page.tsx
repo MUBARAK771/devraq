@@ -76,7 +76,7 @@ export default function Home() {
   ]
 
   const VISIBLE_COUNT = 3
-  const ROTATE_INTERVAL_MS = 2 * 60 * 1000 // 5 minutes
+  const ROTATE_INTERVAL_MS = 60 * 1000 // 1 minute
   const [startIndex, setStartIndex] = useState(0)
 
   useEffect(() => {
