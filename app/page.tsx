@@ -292,15 +292,15 @@ export default function Home() {
           </Link>
 
           <div className="mt-9 flex justify-center gap-4">
-            <a href="https://facebook.com/in/Mubarak Abdulsalam" className="text-ink/80 hover:text-accent">
+            <Link href="https://facebook.com/in/Mubarak Abdulsalam" className="text-ink/80 hover:text-accent">
               Facebook
-            </a>
-            <a href="https://linkedin.com/in/mubarak-abdulsalam-4943a0344" className="text-ink/80 hover:text-accent">
+            </Link>
+            <Link href="https://linkedin.com/in/mubarak-abdulsalam-4943a0344" className="text-ink/80 hover:text-accent">
               LinkedIn
-            </a>
-            <a href="https://github.com/Mubarak771" className="text-ink/80 hover:text-accent">
+            </Link>
+            <Link href="https://github.com/Mubarak771" className="text-ink/80 hover:text-accent">
               GitHub
-            </a>
+            </Link>
           </div>
         </div>
       </div>
