@@ -292,10 +292,10 @@ export default function Home() {
           </Link>
 
           <div className="mt-9 flex justify-center gap-4">
-            <Link href="https://facebook.com/in/Mubarak Abdulsalam" className="text-ink/80 hover:text-accent">
+            <Link href="https://www.facebook.com/profile.php?id=100070202539212" className="text-ink/80 hover:text-accent">
               Facebook
             </Link>
-            <Link href="https://linkedin.com/in/mubarak-abdulsalam-4943a0344" className="text-ink/80 hover:text-accent">
+            <Link href="https://www.linkedin.com/in/mubarak-abdulsalam-ab128a3a4" className="text-ink/80 hover:text-accent">
               LinkedIn
             </Link>
             <Link href="https://github.com/Mubarak771" className="text-ink/80 hover:text-accent">
