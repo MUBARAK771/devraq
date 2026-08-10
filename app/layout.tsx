@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import "./globals.css"
 import { Poppins } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -7,6 +8,14 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 })
+
+export const metadata: Metadata = {
+  title: "Mubarak | Frontend Developer",
+  icons: {
+    icon: [{ url: "/profile.png", type: "image/png" }],
+    apple: [{ url: "/profile.png", type: "image/png" }],
+  },
+}
 
 export default function RootLayout({
   children,
@@ -19,7 +28,6 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${poppins.variable} font-sans antialiased`}
     >
-      <title>Mubarak | Frontend Developer</title>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
