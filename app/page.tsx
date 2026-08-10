@@ -39,7 +39,7 @@ export default function Home() {
       title: "Eduflex",
       image: "/eduflex.png",
       desc: "A platform for managing and organizing school sports activities, Designed with Next.js and API integration.",
-      link: "https://lenders-frontend.vercel.app/",
+      link: "https://eduflex-frontend-two.vercel.app/",
     },
     {
       tag: "Ecommerce",
