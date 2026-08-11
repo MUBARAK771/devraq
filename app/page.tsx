@@ -166,7 +166,7 @@ export default function Home() {
         </div>
 
         <div
-          className="flex aspect-square w-full max-w-xs shrink-0 items-center justify-center md:w-80 md:max-w-none"
+          className="flex aspect-square w-full max-w-xs shrink-0 items-center justify-center overflow-hidden md:w-80 md:max-w-none"
           style={{
             borderRadius: "24px",
             border: "1px solid var(--color-border)",
@@ -174,7 +174,11 @@ export default function Home() {
               "linear-gradient(135deg, var(--color-surface), var(--color-bg))",
           }}
         >
-          <User className="h-24 w-24 rounded-full bg-accent/20 p-5 text-accent/50" />
+          <img
+            src="/profile.png"
+            alt="Abeeb - Frontend Developer"
+            className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+          />
         </div>
       </div>
 
