@@ -14,11 +14,11 @@ export default function Home() {
 
   const projects = [
     {
-      tag: "Posting App",
-      title: "Vibe App",
-      image: "/Vue_project.png",
-      desc: "A social media app for sharing posts and interacting with other users designed with HTML, Vue.js.",
-      link: "https://vibe-app-beryl-psi.vercel.app",
+      tag: "Job Portal",
+      title: "SkillBridge",
+      image: "/image.png",
+      desc: "A job portal connecting skilled Africans with companies, creators, and opportunities worldwide; built with Next.js and deployed on Vercel.",
+      link: "https://skill-bridge-ivory.vercel.app/",
     },
     {
       tag: "Fintech",
@@ -144,7 +144,7 @@ export default function Home() {
 
             <h4 className="text-start text-xl md:text-2xl">
               I specialize in building responsive interfaces with modern
-              technologies like React, Next.js, TypeScript, and Tailwind CSS.
+              technologies like React, Next.js, TypeScript, React Native and Tailwind CSS.
             </h4>
 
             <h4 className="text-start text-xl md:text-2xl">
